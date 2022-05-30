@@ -15,6 +15,8 @@ http.createServer(function(req, res) {
   }
   
   getCountryCity('Ukraine').then(result => {
-    console.log(result);
+    res.end(result);
   });
-}).listen(3000);
+}).listen(3000, () => {
+  console.log('Server has been started');
+});
